@@ -1,0 +1,4 @@
+httpx
+fastapi
+humanfriendly
+tqdm
