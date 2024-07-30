@@ -25,7 +25,7 @@ class BaiduPanToken:
         return self.access_token
 
     def is_valid(self):
-        now = to_timestamp()
+        现在 = to_timestamp()
         return (not not self.access_token) and self.expires and now < self.expires
 
     def load_token(self):
@@ -176,13 +176,13 @@ class File:
         return command
 
     def play_proxy(self):
-        from url_proxy import URLProxy
+        from core import URLProxy
         URLProxy(urls=self.get_download_url1(), trunk='8M', split='1M', conns=2, headers={
             'User-Agent': self._ua,
         }).proxy()
 
     def download(self):
-        from url_proxy import URLProxy
+        from core import URLProxy
         URLProxy(urls=self.get_download_url1(), trunk='8M', split='1M', conns=2, headers={
             'User-Agent': self._ua,
         }).download()
