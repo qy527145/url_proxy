@@ -25,7 +25,7 @@ class BaiduPanToken:
         return self.access_token
 
     def is_valid(self):
-        现在 = to_timestamp()
+        now = to_timestamp()
         return (not not self.access_token) and self.expires and now < self.expires
 
     def load_token(self):
@@ -78,7 +78,7 @@ class BaiduPanToken:
                 cookies={
                     'BDUSS': self.bduss
                 })
-            现在 = to_timestamp()
+            now = to_timestamp()
             resp = requests.get(
                 f'https://openapi.baidu.com/oauth/2.0/token?grant_type=device_token&code={device_code}&client_id={client_id}&client_secret={client_secret}')
             resp.raise_for_status()
