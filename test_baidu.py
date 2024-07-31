@@ -167,7 +167,7 @@ class File:
             'User-Agent': self._ua,
         })
         resp.raise_for_status()
-        return f'{resp.json()['info'][0]['dlink']}&access_token={self._auth.get_token()}'
+        return f"{resp.json()['info'][0]['dlink']}&access_token={self._auth.get_token()}"
 
     def cmd(self):
         download_url = self.get_download_url1()
