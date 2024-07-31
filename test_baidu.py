@@ -151,7 +151,7 @@ class File:
             'access_token': self._auth.get_token(),
         })
         resp.raise_for_status()
-        return f'{resp.json()['list'][0]['dlink']}&access_token={self._auth.get_token()}'
+        return f"{resp.json()['list'][0]['dlink']}&access_token={self._auth.get_token()}"
 
     def get_download_url1(self):
         # 隐藏的api, 支持多线程且不限制分片, 但是不稳定
